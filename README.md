@@ -2,6 +2,13 @@
 
 This is a simple project to practice todo lsit by Next.js.
 
+## Technic
+
+- Next.js v14 (Because react hook form is not supported v15)
+- TailwindCSS
+- React Hook Form
+- Shadcn UI
+
 ## Getting Started
 
 First, run the development server:
