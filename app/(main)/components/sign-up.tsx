@@ -26,6 +26,7 @@ export const SignUpForm = () => {
       email: "",
       password: "",
     },
+    mode: "onChange",
   });
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
@@ -35,7 +36,7 @@ export const SignUpForm = () => {
   return (
     <Form {...form}>
       <form className="w-80 space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="space-y-4">
+        <div>
           <FormField
             control={form.control}
             name="email"
@@ -65,11 +66,12 @@ export const SignUpForm = () => {
           />
         </div>
 
-        <div>
-          <Button type="submit" className="mt-2">
-            Sign Up
-          </Button>
-        </div>
+        <Button
+          type="submit"
+          disabled={!form.formState.isValid || form.formState.isSubmitting}
+        >
+          Sign Up
+        </Button>
       </form>
     </Form>
   );
